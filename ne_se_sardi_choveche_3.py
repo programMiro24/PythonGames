@@ -85,25 +85,49 @@ poziciq_pionka_4 = 1
 
 game_over = False
 while True:
-    for index in range(4):
-        if poziciq_pionki[index] == daljina_pole:
-            win = f"Gamer {index + 1}"
-            game_over = True
-    if game_over:
+    if poziciq_pionka_1 == daljina_pole:
+        win = "Gamer 1"
         break
-    ans = input("Натисни Enter за игра.")
-    for index in range(4):
-        zars[index] = random.randint(1, 100000) % 6 + 1
-        time.sleep(0.5)
-    for index in range(4):
-        print(f"Зар {index+1} = {zars[index]}")
-        if poziciq_pionki[index] + zars[index] <= 68:
-            poziciq_pionki[index] = poziciq_pionki[index]+zars[index]
-        print(f"Позиция {index+1} = {poziciq_pionki[index]}")
+    if poziciq_pionka_2 == daljina_pole:
+        win = "Gamer 2"
+        break
+    if poziciq_pionka_3 == daljina_pole:
+        win = "Gamer 3"
+        break
+    if poziciq_pionka_4 == daljina_pole:
+        win = "Gamer 4"
+        break
 
-    for index in range(4):
-        if poziciq_pionki[index] <= 68:
-            pionki[index].forward(zars[index] * 10)
+    ans = input("Натисни Enter за игра.")
+    zar_1 = random.randint(1, 100000) % 6 + 1
+    time.sleep(0.5)
+    print(f"Зар 1 = {zar_1}")
+    if poziciq_pionka_1 + zar_1 <= 68:
+         poziciq_pionka_1 += zar_1
+         print(f"Позиция 1 = {poziciq_pionka_1}")
+    zar_2 = random.randint(1, 100000) % 6 + 1
+    time.sleep(0.5)
+    print(f"Зар 2 = {zar_2}")
+    if poziciq_pionka_2 + zar_2 <= 68:
+         poziciq_pionka_2 += zar_2
+         print(f"Позиция 2 = {poziciq_pionka_2}")
+    zar_3 = random.randint(1, 100000) % 6 + 1
+    time.sleep(0.5)
+    print(f"Зар 3 = {zar_3}")
+    if poziciq_pionka_3 + zar_3 <= 68:
+         poziciq_pionka_3 += zar_3
+         print(f"Позиция 3 = {poziciq_pionka_3}")
+    zar_4 = random.randint(1, 100000) % 6 + 1
+    time.sleep(0.5)
+    print(f"Зар 4 = {zar_4}")
+    if poziciq_pionka_4 + zar_4 <= 68:
+         poziciq_pionka_4 += zar_4
+         print(f"Позиция 4 = {poziciq_pionka_4}")
+
+    pionka_1.forward(zar_1 * 10)
+    pionka_2.forward(zar_2 * 10)
+    pionka_3.forward(zar_3 * 10)
+    pionka_4.forward(zar_4 * 10)
 
 print(f"{win} win!")
 time.sleep(50)
