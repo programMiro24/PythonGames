@@ -1,4 +1,4 @@
 # Angry Birds
-Language: Python
-Library: Pygame
-There are different version of the game.
+Language: Python <br>
+Library: Pygame <br>
+There are different version of the game. <br>
