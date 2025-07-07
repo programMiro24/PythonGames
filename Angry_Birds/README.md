@@ -7,4 +7,5 @@ There are different version of the game. <br>
 <ul>
   <li>Gravity</li>
   <li>Dragging and Launched</li>
+  <li>Classes and Object - OOP</li>
 </ul>
