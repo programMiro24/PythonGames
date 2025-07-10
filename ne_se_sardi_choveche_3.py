@@ -82,7 +82,7 @@ poziciq_pionka_1 = 1
 poziciq_pionka_2 = 1
 poziciq_pionka_3 = 1
 poziciq_pionka_4 = 1
-
+win = 0
 game_over = False
 while True:
     if poziciq_pionka_1 == daljina_pole:
@@ -97,37 +97,36 @@ while True:
     if poziciq_pionka_4 == daljina_pole:
         win = "Gamer 4"
         break
-
     ans = input("Натисни Enter за игра.")
-    zar_1 = random.randint(1, 100000) % 6 + 1
-    time.sleep(0.5)
-    print(f"Зар 1 = {zar_1}")
-    if poziciq_pionka_1 + zar_1 <= 68:
-         poziciq_pionka_1 += zar_1
-         print(f"Позиция 1 = {poziciq_pionka_1}")
-    zar_2 = random.randint(1, 100000) % 6 + 1
-    time.sleep(0.5)
-    print(f"Зар 2 = {zar_2}")
-    if poziciq_pionka_2 + zar_2 <= 68:
-         poziciq_pionka_2 += zar_2
-         print(f"Позиция 2 = {poziciq_pionka_2}")
-    zar_3 = random.randint(1, 100000) % 6 + 1
-    time.sleep(0.5)
-    print(f"Зар 3 = {zar_3}")
-    if poziciq_pionka_3 + zar_3 <= 68:
-         poziciq_pionka_3 += zar_3
-         print(f"Позиция 3 = {poziciq_pionka_3}")
-    zar_4 = random.randint(1, 100000) % 6 + 1
-    time.sleep(0.5)
-    print(f"Зар 4 = {zar_4}")
-    if poziciq_pionka_4 + zar_4 <= 68:
-         poziciq_pionka_4 += zar_4
-         print(f"Позиция 4 = {poziciq_pionka_4}")
 
-    pionka_1.forward(zar_1 * 10)
-    pionka_2.forward(zar_2 * 10)
-    pionka_3.forward(zar_3 * 10)
-    pionka_4.forward(zar_4 * 10)
+    zar1 = random.randint(1, 10000000)%6+1
+    time.sleep(0.5)
+    print(f"Зар 1 = {zar1}")
+    if poziciq_pionka_1 + zar1 <= daljina_pole:
+        poziciq_pionka_1 += zar1
+
+    zar2 = random.randint(1, 10000000)%6+1
+    time.sleep(0.5)
+    print(f"Зар 2 = {zar2}")
+    if poziciq_pionka_2 + zar2 <= daljina_pole:
+        poziciq_pionka_2 += zar2
+
+    zar3 = random.randint(1, 10000000)%6+1
+    time.sleep(0.5)
+    print(f"Зар 3 = {zar3}")
+    if poziciq_pionka_3 + zar3 <= daljina_pole:
+        poziciq_pionka_3 += zar3
+
+    zar4 = random.randint(1, 10000000)%6+1
+    time.sleep(0.5)
+    print(f"Зар 4 = {zar4}")
+    if poziciq_pionka_4 + zar4 <= daljina_pole:
+        poziciq_pionka_4 += zar4
+
+    pionka_1.forward(zar1 * 10)
+    pionka_2.forward(zar2 * 10)
+    pionka_3.forward(zar3 * 10)
+    pionka_4.forward(zar4 * 10)
 
 print(f"{win} win!")
 time.sleep(50)
